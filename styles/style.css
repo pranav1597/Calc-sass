@@ -1,0 +1,199 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#348F50), to(#56B4D3));
+  background: linear-gradient(to right, #348F50, #56B4D3);
+  -webkit-transition: background .3s linear;
+  transition: background .3s linear;
+}
+
+body h1 {
+  /* border: 2px solid red; */
+  text-align: center;
+  font-family: 'Fuggles', cursive;
+  font-size: 3em;
+  color: white;
+  margin-top: 0;
+}
+
+body.dark {
+  background: -webkit-gradient(linear, left top, right top, from(#232526), to(#414345));
+  background: linear-gradient(to right, #232526, #414345);
+}
+
+/* toggle button theme */
+.toggle-button {
+  /* border: 2px solid red; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.toggle-button .checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggle-button .label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #111;
+  border-radius: 50px;
+  width: 50px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.toggle-button .label .ball {
+  position: absolute;
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  left: 2px;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.toggle-button .label .fa-moon {
+  color: #f1c40f;
+}
+
+.toggle-button .label .fa-sun {
+  color: #f39c12;
+}
+
+.toggle-button .checkbox:checked + .label .ball {
+  -webkit-transform: translateX(27px);
+          transform: translateX(27px);
+}
+
+.calculator-grid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-height: 50vh;
+  -ms-grid-columns: (70px)[4];
+      grid-template-columns: repeat(4, 70px);
+  -ms-grid-rows: minmax(100px, auto) (70px)[5];
+      grid-template-rows: minmax(100px, auto) repeat(5, 70px);
+  /* border: 2px solid yellow; */
+  -webkit-transition: background-color .3s linear;
+  transition: background-color .3s linear;
+}
+
+.calculator-grid button {
+  cursor: pointer;
+  font-size: 1.5em;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  border: 2px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.calculator-grid button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.calculator-grid .span-two {
+  grid-column: span 2;
+}
+
+.calculator-grid .output {
+  grid-column: 1/-1;
+  /* border: 2px solid blue; */
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.calculator-grid .output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1em;
+}
+
+.calculator-grid .output .current-operand {
+  font-size: 1.5em;
+}
+
+.github {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.github .icon-link {
+  text-decoration: none;
+  color: black;
+  -webkit-transition: color .3s linear;
+  transition: color .3s linear;
+}
+
+.icon-link.dark {
+  color: #dadada;
+}
+
+@media (min-width: 700px) {
+  body {
+    background: -webkit-gradient(linear, left top, right top, from(#C33764), to(#1D2671));
+    background: linear-gradient(to right, #C33764, #1D2671);
+  }
+  .toggle-button {
+    max-width: 400px;
+  }
+  .calculator-grid {
+    -ms-grid-columns: (100px)[4];
+        grid-template-columns: repeat(4, 100px);
+    -ms-grid-rows: minmax(100px, auto) (70px)[5];
+        grid-template-rows: minmax(100px, auto) repeat(5, 70px);
+  }
+}
+/*# sourceMappingURL=style.css.map */
